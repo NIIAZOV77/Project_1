@@ -1,7 +1,8 @@
-window.onload = function () {
-  document.body.classList.add('loaded_hiding');
-  window.setTimeout(function () {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-  }, 500);
-}
+let mask = document.querySelector('.mask');
+
+window.addEventListener("load", () => {
+  mask.classList.add('hide');
+  setTimeout(() => {
+    mask.removes
+   }, 600)
+});

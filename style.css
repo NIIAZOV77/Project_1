@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background: #E8E8E8 ;
+    background: linear-gradient(315deg, #fff, d7e1ec) ;
 }
 .search-box
 {
@@ -37,7 +37,7 @@ body
 .search-box:hover > .search-txt
 {
     width: 240px;
-    padding: 0 6px;
+    padding: 0 6px; 
 }
 .search-txt
 {
@@ -57,12 +57,13 @@ i {
 }
 .dws {
     position: absolute;
-    top: 90%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
    }
-   .butt {
+.butt {
     border: 3px solid #778899;
+    border-radius: 50%;
     font-size: 10px;
     color: #778899;
     text-decoration: none;
@@ -77,8 +78,8 @@ i {
     transition: .5s;
     overflow: hidden;
    }
-   .butt::before,
-   .butt::after {
+.butt::before,
+.butt::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -89,15 +90,108 @@ i {
     opacity: .5;
     transition: .3s;
     z-index: -1;
+    border-radius: 50%;
    }
-   .butt::after {
+.butt::after {
     opacity: 1;
     transition-delay: .2s;
    }
-   .butt:hover {
+.butt:hover {
     color: #fff;
    }
-   .butt:hover::before,
-   .butt:hover::after {
+.butt:hover::before,
+.butt:hover::after {
     left: 0;
    }
+
+.wrapper {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+   }
+.wrapper .icon {
+    margin: 0 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+   }
+.wrapper .icon span {
+    position: relative;
+    height: 60px;
+    width: 60px;
+    display: block;
+    background: rgb(246, 246, 246);
+    text-align: center;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+   }
+.wrapper .icon span i {
+    color: #213140;
+    font-size: 25px;
+    line-height: 60px;
+}
+.wrapper .icon:hover span i{
+    color: #fff;
+}
+.wrapper .icon .tooltip {
+   position: absolute;
+   top: 0%;
+   background: #fff;
+   color: #fff;
+   font-size: 20px;
+   padding: 10px 18px;
+   border-radius: 25px;
+   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+   opacity: 0;
+   pointer-events: none;
+   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+    top: -90%;
+    opacity: 1;
+    pointer-events: auto;
+}
+.wrapper .icon .tooltip::before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+
+.wrapper .vk:hover span,
+.wrapper .vk:hover .tooltip, 
+.wrapper .vk:hover .tooltip:before {
+    background: #4C75A3 ;
+}
+.wrapper .email:hover span,
+.wrapper .email:hover .tooltip, 
+.wrapper .email:hover .tooltip:before {
+    background: #FD4648 ;
+}
+.wrapper .tg:hover span,
+.wrapper .tg:hover .tooltip, 
+.wrapper .tg:hover .tooltip:before {
+    background: #0088cc;
+}
+.wrapper .site:hover span,
+.wrapper .site:hover .tooltip, 
+.wrapper .site:hover .tooltip:before {
+    background: rgb(190, 190, 0);
+}
+
+.wrapper .youtube:hover span,
+.wrapper .youtube:hover .tooltip, 
+.wrapper .youtube:hover .tooltip:before {
+    background: #f00 ;
+}
